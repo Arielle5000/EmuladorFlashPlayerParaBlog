@@ -48,8 +48,8 @@
     }
   ],
   "web_accessible_resources": [
-    "https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/core.ruffle.78d0f623a87a29523676.js",
-    "https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/26d1540acdd0f88cf2fe.wasm"
+    "https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/*.js",
+    "https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/*.wasm"
   ],
   "browser_specific_settings": {
     "gecko": {
