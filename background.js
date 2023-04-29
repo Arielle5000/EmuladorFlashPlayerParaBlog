@@ -1,13 +1,5 @@
 'use strict';
 
-// https://www.permadi.com/tutorial/flashVars/index.html
-// http://nekogames.jp/g2.html?gid=PRM
-// https://web.archive.org/web/20030608075418/http://www.chuckecheese.com/cec2002/funstation/
-// https://www.newgrounds.com/portal/view/498969
-// https://revision.madrevision.com/bowman2/
-// https://armorgames.com/play/2267/warfare-1917
-// https://www.meninasjogos.com.br/vista-barbie-de-princesa-disney/
-
 const notify = e => chrome.notifications.create({
   type: 'basic',
   iconUrl: '/data/icons/48.png',
