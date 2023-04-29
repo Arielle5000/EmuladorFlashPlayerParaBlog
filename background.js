@@ -111,7 +111,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
       title: 'Open SWF in Emulator',
       id: 'link',
       contexts: ['link'],
-      targetUrlPatterns: ['*://*/*.swf*', '*://*/*.SWF*', '*://*/*.swf', '*://*/*.SWF'],
+      targetUrlPatterns: ['https://raw.githubusercontent.com/Arielle5000/jogosswf/main/testeBYCBC.swf'],
       documentUrlPatterns: ['*://*/*']
     });
     chrome.contextMenus.create({
