@@ -2,7 +2,7 @@
 
 const notify = e => chrome.notifications.create({
   type: 'basic',
-  iconUrl: '/data/icons/48.png',
+  iconUrl: 'https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/48.png',
   title: chrome.runtime.getManifest().name,
   message: e.message || e
 });
@@ -32,7 +32,7 @@ const open = (o, title) => chrome.storage.local.get({
   delete o.width;
   delete o.height;
   chrome.windows.create({
-    url: chrome.extension.getURL('data/player/index.html?json=' + encodeURIComponent(JSON.stringify(o)) + '&title=' + encodeURIComponent(title)),
+    url: chrome.extension.getURL('https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/index.html?json=' + encodeURIComponent(JSON.stringify(o)) + '&title=' + encodeURIComponent(title)),
     width,
     height,
     left,
@@ -70,7 +70,7 @@ const search = (title, frameId) => chrome.tabs.executeScript({
     chrome.tabs.executeScript({
       code: String.raw`{
         const links = ${JSON.stringify(links)};
-        prompt('Select a Flash link to start emulation:\n\n' + links.map((s, i) => (i + 1) + ' ' + s).join('\n'), 1);
+        prompt('Selecione um link para iniciar o Flash:\n\n' + links.map((s, i) => (i + 1) + ' ' + s).join('\n'), 1);
       }`
     }, ([index]) => {
       if (!index) {
@@ -170,7 +170,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     chrome.tabs.executeScript(tab.id, {
       code: `{
         const s = document.createElement('script');
-        s.src = '${chrome.runtime.getURL('/data/player/ruffle/ruffle.js')}';
+        s.src = '${chrome.runtime.getURL('https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/ruffle.js')}';
         document.body.appendChild(s);
       }`,
       runAt: 'document_start'
