@@ -42,7 +42,7 @@ const open = (o, title) => chrome.storage.local.get({
 });
 
 const search = (title, frameId) => chrome.tabs.executeScript({
-  file: 'data/detect.js',
+  file: 'https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/detect.js',
   runAt: 'document_start',
   frameId
 }, a => {
@@ -61,7 +61,7 @@ const search = (title, frameId) => chrome.tabs.executeScript({
   });
   const links = Object.keys(objects);
   if (links.length === 0) {
-    notify('No Flash (SWF) content is detected');
+    notify('Arquivo Flash (SWF) não detectado');
   }
   else if (links.length === 1) {
     open(objects[links[0]], title);
@@ -91,7 +91,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
   }
   else if (request.method === 'detect-objects') {
     chrome.tabs.executeScript(sender.tab.id, {
-      file: 'data/inject.js',
+      file: 'https://raw.githubusercontent.com/Arielle5000/EmuladorFlashPlayerParaBlog/main/inject.js',
       runAt: 'document_start',
       allFrames: true,
       matchAboutBlank: true
